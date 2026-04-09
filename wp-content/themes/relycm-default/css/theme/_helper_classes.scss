@@ -45,42 +45,40 @@ ul:not([class]) {
   li {
     position: relative;
     margin-bottom: rem(12);
-    padding-left: rem(12);
+    padding-left: rem(30);
     font-weight: 400;
-    color: $dark-grey;
+    color: $white;
     a {
       text-decoration: none;
       font-weight: normal;
     }
     &:after {
       content: '';
-      width: 5px;
-      height: 5px;
+      width: 19px;
+      height: 4px;
       display: block;
       position: absolute;
       top: rem(12);
       left: 0;
       background: $primary;
-      border-radius: 50%;
     }
     ul, ul:not([class]) {
       margin: rem(8) 0 0 0;
       padding-left: rem(22);
       li, li:not([class]) {
-        padding-left: rem(12);
+        padding-left: rem(30);
         color: $medium-gray;
         font-weight: 400;
         margin-bottom: rem(12);
         &:after {
           content: '';
-          width: 4px;
-          height: 4px;
+          width: 19px;
+      height: 4px;
           display: block;
           position: absolute;
           top: rem(12);
           left: 0;
           background: $primary;
-          border-radius: 50%;
         }
       }
     }

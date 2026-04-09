@@ -14,7 +14,7 @@
 					 <?php
 			        $email_address = get_field('global_email', 'option');
 			        if ($email_address): ?>
-			            <span class="sh-email"><a class="cms_email" href="mailto:<?php echo strtolower($email_address); ?>" title="Email Us" aria-label="Email Us"><i class="fa fa-envelope-o" aria-hidden="true"></i> <span><strong>Email:</strong> <?php echo $email_address; ?></span></a></span>
+			            <span class="sh-email"><a class="cms_email" href="mailto:<?php echo strtolower($email_address); ?>" title="Email Us" aria-label="Email Us"><i class="fa-solid fa-envelope"></i> <span><strong>Email:</strong> <?php echo $email_address; ?></span></a></span>
 			        <?php endif ?>
 
 					
@@ -28,7 +28,7 @@
 					    $link_title = $link['title'];
 					    $link_target = $link['target'] ? $link['target'] : '_self';
 					    ?>
-					    <a class="btn btn-primary d-none d-lg-inline-block m-0" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+					    <a class="btn btn-alt2 d-none d-lg-inline-block m-0" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
 					<?php endif; ?>
 
 				</div>

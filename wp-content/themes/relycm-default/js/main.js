@@ -1399,28 +1399,45 @@ $('.rpm-items-wrap').slick({
 
   //Content association module two
   $('.camt-slider').slick({
-    arrows: false,
-        dots: true,
-        slidesToShow: 6,
-        slidesToScroll: 6,
+        dots: false,
+        slidesToShow: 5,
+        slidesToScroll: 1,
         infinite: true,
+        arrows: true,
         responsive: [
+          {
+          breakpoint: 1200,
+          settings: {
+            slidesToShow: 4,
+            slidesToScroll: 1
+          }
+        },
         {
           breakpoint: 960,
           settings: {
             slidesToShow: 3,
-            slidesToScroll: 3
+            slidesToScroll: 1
+          }
+        },
+          {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
           }
         },
         {
            breakpoint: 400,
            settings: {
-              slidesToShow: 2,
-              slidesToScroll: 2
+              slidesToShow: 1,
+              slidesToScroll: 1
            }
         }
         ]
   });   
+   $('.camt-slider.slick-slide.slick-active:not(:last-of-type) a:last-of-type').blur(function() {
+       $('.slick-next').trigger('click');
+   });
 });
 
 
@@ -1530,6 +1547,124 @@ $('.rpm-items-wrap').slick({
         // Remove the WOW.js script from the page
        // $('script[src="/wp-content/themes/eaglemodeco-default/js/wow.min.js"]').remove();
     }
+});
+
+  $(document).ready(function (){
+  $('.ism-slider').slick({
+    arrows: true,
+    dots: false,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    infinite: true,
+    responsive: [
+    {
+      breakpoint: 1200,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 769,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1
+      }
+    },
+    {
+       breakpoint: 400,
+       settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+       }
+    }
+    ]
+  });
+
+  $('.ism-slider .slick-slide.slick-active:not(:last-of-type) a:last-of-type').blur(function() {
+       $('.slick-next').trigger('click');
+   });
+});
+
+$(document).ready(function (){
+  $('.osm-slider').slick({
+    arrows: true,
+    dots: false,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    infinite: true,
+    responsive: [
+    {
+      breakpoint: 1200,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 769,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1
+      }
+    },
+    {
+       breakpoint: 400,
+       settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+       }
+    }
+    ]
+  });
+
+  $('.osm-slider.slick-slide.slick-active:not(:last-of-type) a:last-of-type').blur(function() {
+       $('.slick-next').trigger('click');
+   });
+});
+
+$(document).ready(function (){
+  $('.csm-slider').slick({
+    arrows: true,
+    dots: false,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    infinite: true,
+    responsive: [
+    {
+      breakpoint: 991,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1
+      }
+    },
+       {
+      breakpoint: 769,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    },
+    {
+       breakpoint: 400,
+       settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+       }
+    }
+    ]
+  });
+
+    $('.csm-slider .slick-slide.slick-active:not(:last-of-type) a:last-of-type').blur(function() {
+       $('.slick-next').trigger('click');
+   });
 });
 
 }(jQuery));

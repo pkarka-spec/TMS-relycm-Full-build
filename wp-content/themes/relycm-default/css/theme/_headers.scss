@@ -53,7 +53,7 @@
 
 .sh-ph,
 .sh-email {
-	margin-right: rem(16);
+	margin-right: rem(24);
 	font-size: rem(20);
 	line-height: rem(24);
 	color: white;
@@ -422,6 +422,7 @@
 		i,
 		.material-icons {
 			color: $primary;
+			margin-right: rem(4);
 		}
 
 		span {
@@ -444,17 +445,6 @@
 			text-decoration: underline;
 		}
 	}
-
-	.search-form-tigger {
-		@include media-breakpoint-up(lg) {
-			color: $white;
-			&:hover,
-			&:focus {
-				color: $nav-hover-color;
-			}
-		}
-	}
-
 	.navbar-light .navbar-toggler,
 	.search-form-tigger,
 	.social-icons a {
@@ -464,6 +454,18 @@
 			color: $blue;
 		}
 	}
+	.search-form-tigger {
+		color: $white;
+		@include media-breakpoint-up(lg) {
+			color: $white;
+			&:hover,
+			&:focus {
+				color: $secondary;
+			}
+		}
+	}
+
+
 
 	.social-icons {
 		height: 100%;

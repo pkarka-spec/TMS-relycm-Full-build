@@ -72,7 +72,7 @@
 				    $link_title = $link['title'];
 				    $link_target = $link['target'] ? $link['target'] : '_self';
 				    ?>
-				    <a class="button btn  btn-primary btn-lg fwc-cta1" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+				    <a class="button btn  btn-alt btn-lg fwc-cta1" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
 				<?php endif; ?>
 
 				<?php 
@@ -1479,10 +1479,14 @@
 	<?php elseif( get_row_layout() == 'blog_module2' ): ?>
 		<section class="blog-module2" id="blog_module2<?php echo $i ?>">
 			<div class="container <?php echo !empty(get_sub_field('container_padding')) ? get_sub_field('container_padding') : 'py-5' ?>">
+				<div class="bm-head-wrap">
 				<?php if (get_sub_field('blog_heading')): ?>
-					<h2 class="blog-heading text-center"><?php echo get_sub_field('blog_heading') ?></h2>
+					<h2 class="blog-heading"><?php echo get_sub_field('blog_heading') ?></h2>
 				<?php endif ?>
-
+				<div class="bmhw-item2">	<?php if( get_sub_field('bmhw_content')): ?>
+          <div class="bmhw-content"><?php echo get_sub_field('bmhw_content'); ?></div>
+          <?php endif; ?></div>
+			</div>
 				<?php
 				$post_type = get_sub_field('post_type');
 				$posts_per_page = get_sub_field('posts_per_page'); ?>
@@ -1970,19 +1974,22 @@
     	</section>
 
     <?php elseif( get_row_layout() == 'industries_we_serve_module' ): ?>
-    	<section class="industries-we-serve-module" id="industries_we_serve_module<?php echo $i ?>">
+    	<section class="industries-we-serve-module" id="industries_we_serve_module<?php echo $i ?>" <?php if (get_sub_field('iwsm_bg_image')): ?> style="background-image: url(<?php echo get_sub_field('iwsm_bg_image'); ?>);" <?php endif; ?>>
 		    <div class="container <?php echo !empty(get_sub_field('container_padding')) ? get_sub_field('container_padding') : 'py-5' ?>">
-		    	<?php if (get_sub_field('iwsm_section_heading')): ?>
-		    		<h2 class="iwsm-heading "><?php echo get_sub_field('iwsm_section_heading'); ?></h2>
-		    	<?php endif ?>
 
 		        <div class="row">
-		            <div class="col-md-4 col-lg-6 d-none d-md-block">
+		            <div class="col-md-6 col-lg-7 d-none d-md-block">
+						 	<?php if (get_sub_field('iwsm_section_heading')): ?>
+		    		<h2 class="iwsm-heading "><?php echo get_sub_field('iwsm_section_heading'); ?></h2>
+		    	<?php endif ?>
+				<?php if (get_sub_field('iwsm_subtext')): ?>
+		    		<div class="iwsm-subtext "><?php echo get_sub_field('iwsm_subtext'); ?></div>
+		    	<?php endif ?>
 		                <!-- Tabs nav -->
 		            	<?php if (have_rows('iwsm_tabs_items')): ?>
 		                <div class="nav row nav-pills nav-pills-custom" id="v-pills-<?php echo get_row_index() ?>-tab" role="tablist" aria-orientation="vertical">
 		            		<?php while (have_rows('iwsm_tabs_items')): the_row(); ?>
-			                    <a class="col-12 col-lg-6 nav-link p-2  <?php if (get_row_index()==1): ?>active<?php endif ?>" id="v-pills-<?php echo get_row_index(); ?>-tab" data-toggle="pill" href="#v-pills-<?php echo get_row_index(); ?>" role="tab" aria-controls="v-pills-<?php echo get_row_index(); ?>" aria-selected="<?php if (get_row_index()==1): ?>true<?php else: ?>false<?php endif ?>">
+			                    <a class="col-12 nav-link p-2  <?php if (get_row_index()==1): ?>active<?php endif ?>" id="v-pills-<?php echo get_row_index(); ?>-tab" data-toggle="pill" href="#v-pills-<?php echo get_row_index(); ?>" role="tab" aria-controls="v-pills-<?php echo get_row_index(); ?>" aria-selected="<?php if (get_row_index()==1): ?>true<?php else: ?>false<?php endif ?>">
 									<div class="iwsm-wrap">
 			                    	<?php
 			                    	$image = get_sub_field('title_thumbnail_image');
@@ -1995,7 +2002,7 @@
 			                    		<img src="<?php echo $image2['url'] ?>" class="off" alt="<?php echo $image2['alt'] ?>" title="<?php echo $image2['title'] ?>">
 			                    	<?php endif ?>
 			                        <?php if (get_sub_field('iwsm_title')): ?>
-			                        	<span class="font-weight-bold small text-uppercase"><?php echo get_sub_field('iwsm_title') ?></span>
+			                        	<span class="iwsm-left-title"><?php echo get_sub_field('iwsm_title') ?></span>
 			                        <?php endif ?>
 									</div>
 			                    </a>
@@ -2006,7 +2013,7 @@
 		            </div>
 
 
-		            <div class="col-md-8 col-lg-6">
+		            <div class="col-md-6 col-lg-5">
 		                <!-- Tabs content -->
 		                <?php if (have_rows('iwsm_tabs_items')): ?>
 			                <div class="tab-content" id="v-pills-tabContent" role="tablist">
@@ -2031,11 +2038,11 @@
 					                    </a>
 					                </div>
 
-						            <div id="collapse-<?php echo get_row_index() ?>" class="collapse p-4 mb-3 <?php if (get_row_index()==1): ?>show<?php endif ?>" data-parent="#content" role="tabpanel" aria-labelledby="heading-<?php echo get_row_index() ?>">
+						            <div id="collapse-<?php echo get_row_index() ?>" class="collapse mb-3 <?php if (get_row_index()==1): ?>show<?php endif ?>" data-parent="#content" role="tabpanel" aria-labelledby="heading-<?php echo get_row_index() ?>">
 				                    	<?php
 				                    	$iwsm_image = get_sub_field('iwsm_image');
 				                    	if ($iwsm_image): ?>
-				                    		<img class="mb-4 iwsm-img" src="<?php echo $iwsm_image['url'] ?>" alt="<?php echo $iwsm_image['alt'] ?>" title="<?php echo $iwsm_image['title'] ?>">
+				                    		<img class="iwsm-img" src="<?php echo $iwsm_image['url'] ?>" alt="<?php echo $iwsm_image['alt'] ?>" title="<?php echo $iwsm_image['title'] ?>">
 				                    	<?php endif ?>
 
 				                    	<div class="iwsm-content-wrapper">
@@ -2543,13 +2550,20 @@
 
 
 	<?php elseif( get_row_layout() == 'content-associations_module_two' ): ?>
-		<section class="content-associations-module-two">
+		<section class="content-associations-module-two" <?php if( get_sub_field('camt_img') ): ?>style="background-image: url(<?php echo get_sub_field('camt_img') ?>);"<?php endif; ?>>
 			<div class="container <?php echo !empty(get_sub_field('container_padding')) ? get_sub_field('container_padding') : 'py-5' ?>">
+
+					<div class="camt-wrap">
 				<?php if (get_sub_field('cam_section_header')): ?>
 					<h2 class="cam-title"><?php echo get_sub_field('cam_section_header'); ?></h2>
 				<?php endif ?>
-
-				<?php if (have_rows('cam_add_logos')): ?>
+				<?php if( get_sub_field('camt_content')): ?>
+          <div class="camt-content"><?php echo get_sub_field('camt_content'); ?></div>
+          <?php endif; ?>
+			</div>
+			</div>
+			<div class="container cam-container">
+					<?php if (have_rows('cam_add_logos')): ?>
 					<div class="cam-listing">
 						<div class="camt-slider">
 		                	<?php while (have_rows('cam_add_logos')): the_row(); ?>
@@ -3998,6 +4012,265 @@
         </div>
       </section>
 
+<?php elseif( get_row_layout() == 'icon_slider_module' ): ?>   
+<section class="icon-slider-module">
+<div class="container">
+	<?php if( get_sub_field('heading')): ?>
+          <h2 class="ism-heading"><?php echo get_sub_field('heading'); ?></h2>
+          <?php endif; ?>
+	
+		<div class="ism-wrap">
+			<div class="ism-slider">
+			 <?php if( have_rows('ism_items') ): while ( have_rows('ism_items') ) : the_row(); ?>
+			<div class="ism-item">
+				<?php 
+				$image = get_sub_field('ism_image');
+				if( !empty( $image ) ): ?>
+				<div class="ism-icon"> <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" title="<?php echo esc_attr($image['alt']); ?>" /></div>
+				<?php endif; ?>
+				<?php if( get_sub_field('title')): ?>
+          <h3 class="ism-title"><?php echo get_sub_field('title'); ?></h3>
+          <?php endif; ?>	
+			</div>
+			<?php endwhile; endif; ?>   
+		</div>
+	</div>
+	<?php if( get_sub_field('content')): ?>
+          <div class="ism-content"><?php echo get_sub_field('content'); ?></div>
+          <?php endif; ?>	
+</div>
+</section>
+
+<?php elseif( get_row_layout() == 'video_content_module' ): ?>   
+	<section class="video-content-module" <?php if (get_sub_field('vcm_bg_img')): ?>style="background-image:url('<?php echo get_sub_field('vcm_bg_img'); ?>');"<?php endif ?> >
+		<div class="container">
+			<div class="row vcm-wrap">
+				<div class="col-lg-7 vcm-item1">
+					   <?php
+						$cta_two = get_sub_field('vcm_link');
+						if($cta_two):
+						$link_url = $cta_two['url'];
+						$link_title = $cta_two['title'];
+						$link_target = $cta_two['target'] ? $cta_two['target'] : '_self';
+						?>
+						<a class="vcm-video popup-youtube" href="<?php echo esc_url($link_url); ?>"><?php 
+						$image = get_sub_field('vcm_thumb');
+						if( !empty( $image ) ): ?>
+							<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" title="<?php echo esc_attr($image['alt']); ?>" class="vcm-img"/>
+						<?php endif; ?>
+						</a>
+						<?php endif; ?>	
+				</div>
+				<div class="col-lg-5 vcm-item2">
+					<?php if( get_sub_field('vcm_heading')): ?>
+						<h2 class="vcm-heading"><?php echo get_sub_field('vcm_heading'); ?></h2>
+					<?php endif; ?>
+					<?php if( get_sub_field('vcm_content')): ?>
+						<div class="vcm-content"><?php echo get_sub_field('vcm_content'); ?></div>
+					<?php endif; ?>
+					   <?php
+						$cta_two = get_sub_field('vcm_cta');
+						if($cta_two):
+						$link_url = $cta_two['url'];
+						$link_title = $cta_two['title'];
+						$link_target = $cta_two['target'] ? $cta_two['target'] : '_self';
+						?>
+						<a class="btn btn-alt" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr( $link_target ); ?>"><span><?php echo esc_html($link_title); ?></span></a>
+						<?php endif; ?>	
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<?php elseif( get_row_layout() == 'our_services_module' ): ?>   
+	<section class="our-services-module" <?php if (get_sub_field('osm_bg_img')): ?>style="background-image:url('<?php echo get_sub_field('osm_bg_img'); ?>');"<?php endif ?> >
+		<div class="container">
+			<div class="osm-head-wrap">
+				<div class="osmhw-item1">	<?php if( get_sub_field('osmhw_heading')): ?>
+          <h2 class="osmhw-heading"><?php echo get_sub_field('osmhw_heading'); ?></h2>
+          <?php endif; ?></div>
+				<div class="osmhw-item2">	<?php if( get_sub_field('osmhw_content')): ?>
+          <div class="osmhw-content"><?php echo get_sub_field('osmhw_content'); ?></div>
+          <?php endif; ?></div>
+			</div>
+			<div class="osm-wrap">
+				<div class="osm-slider">
+					<?php if( have_rows('osm_item') ): while ( have_rows('osm_item') ) : the_row(); ?>
+					   <?php
+						$cta_two = get_sub_field('osm_link');
+						if($cta_two):
+						$link_url = $cta_two['url'];
+						$link_title = $cta_two['title'];
+						$link_target = $cta_two['target'] ? $cta_two['target'] : '_self';
+						?>
+						<a class="osm-link" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php endif; ?>	
+					<div class="osm-item" <?php if (get_sub_field('osm_bucket_img')): ?>style="background-image:url('<?php echo get_sub_field('osm_bucket_img'); ?>');"<?php endif ?>>
+						<?php if( get_sub_field('osm_title')): ?>
+          <h2 class="osm-title"><?php echo get_sub_field('osm_title'); ?></h2>
+          <?php endif; ?>
+					</div><?php if($cta_two): ?></a><?php endif; ?>
+					<?php endwhile; endif; ?> 
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<?php elseif( get_row_layout() == 'quality_management_module' ): ?>   
+		<section class="quality-management-module" <?php if (get_sub_field('qmm_bg_img')): ?>style="background-image:url('<?php echo get_sub_field('qmm_bg_img'); ?>');"<?php endif ?>>
+			<div class="container">
+				<div class="qmm-wrap">
+					<div class="qmm-image">
+						<?php 
+						$image = get_sub_field('qmm_image');
+						if( !empty( $image ) ): ?>
+							<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" title="<?php echo esc_attr($image['alt']); ?>"/>
+						<?php endif; ?>
+					</div>
+					<div class="qmm-content">
+						<?php if( get_sub_field('qmm_heading')): ?>
+						<h2 class="qmm-heading"><?php echo get_sub_field('qmm_heading'); ?></h2>
+					<?php endif; ?>
+					<?php if( get_sub_field('qmm_content')): ?>
+						<div class="qmmc-content"><?php echo get_sub_field('qmm_content'); ?></div>
+					<?php endif; ?>
+					<div class="qmm-btn-wrap">
+										   <?php
+						$cta_two = get_sub_field('qmm_cta1');
+						if($cta_two):
+						$link_url = $cta_two['url'];
+						$link_title = $cta_two['title'];
+						$link_target = $cta_two['target'] ? $cta_two['target'] : '_self';
+						?>
+						<a class="btn btn-alt qmm-cta1" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr( $link_target ); ?>"><span><?php echo esc_html($link_title); ?></span></a>
+						<?php endif; ?>	
+										   <?php
+						$cta_two = get_sub_field('qmm_cta2');
+						if($cta_two):
+						$link_url = $cta_two['url'];
+						$link_title = $cta_two['title'];
+						$link_target = $cta_two['target'] ? $cta_two['target'] : '_self';
+						?>
+						<a class="btn btn-alt qmm-cta2" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr( $link_target ); ?>"><span><?php echo esc_html($link_title); ?></span></a>
+						<?php endif; ?>	
+					</div>
+	
+					</div>
+				</div>
+			</div>
+		</section>
+<?php elseif( get_row_layout() == 'form_quote_module' ): ?>   
+	<section class="form-quote-module"  <?php if (get_sub_field('fqm_bg_img')): ?>style="background-image:url('<?php echo get_sub_field('fqm_bg_img'); ?>');"<?php endif ?>>
+		<div class="container">
+			<div class="fqm-wrap">
+					<?php if( get_sub_field('fqm_heading')): ?>
+          <h2 class="fqm-heading"><span><?php echo get_sub_field('fqm_heading'); ?></span></h2>
+          <?php endif; ?>
+				<?php if( get_sub_field('fqm_content')): ?>
+          <div class="fqm-content"><?php echo get_sub_field('fqm_content'); ?></div>
+          <?php endif; ?>
+			</div>
+			<div class="fqm-item-wrap">
+				<?php if( have_rows('fqm_item') ): while ( have_rows('fqm_item') ) : the_row(); ?>
+				<div class="fqm-item">
+						<?php 
+						$image = get_sub_field('fqm_number');
+						if( !empty( $image ) ): ?>
+					<div class="fqm-number">
+							<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" title="<?php echo esc_attr($image['alt']); ?>"/></div>
+						
+					<?php endif; ?>
+				<?php if( get_sub_field('fqm_title')): ?>
+					<h3 class="fqm-title"><?php echo get_sub_field('fqm_title'); ?></h3>
+					<?php endif; ?>
+							<?php if( get_sub_field('fqmi_content')): ?>
+					<div class="fqmi-content"><?php echo get_sub_field('fqmi_content'); ?></div>
+					<?php endif; ?>
+				</div>
+				<?php endwhile; endif; ?> 
+			</div>
+						<div class="fqm-btn-wrap">	   <?php
+						$cta_two = get_sub_field('fqm_cta');
+						if($cta_two):
+						$link_url = $cta_two['url'];
+						$link_title = $cta_two['title'];
+						$link_target = $cta_two['target'] ? $cta_two['target'] : '_self';
+						?>
+						<a class="btn btn-alt fqm-cta" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr( $link_target ); ?>"><span><?php echo esc_html($link_title); ?></span></a>
+						<?php endif; ?>	</div>
+		</div>
+	</section>
+<?php elseif( get_row_layout() == 'case_studies_module' ): ?>   
+<section class="case-studies-module" 
+    <?php if (get_sub_field('csm_bg_img')): ?> 
+        style="background-image:url('<?php echo esc_url(get_sub_field('csm_bg_img')); ?>');"
+    <?php endif; ?> >
+
+    <div class="container">
+        <div class="csm-head-wrap">
+            
+            <div class="csmhw-item1">
+                <?php if( get_sub_field('csmhw_heading')): ?>
+                    <h2 class="csmhw-heading"><?php echo esc_html(get_sub_field('csmhw_heading')); ?></h2>
+                <?php endif; ?>
+            </div>
+
+            <div class="csmhw-item2">
+                <?php if( get_sub_field('csmhw_content')): ?>
+                    <div class="csmhw-content"><?php echo get_sub_field('csmhw_content'); ?></div>
+                <?php endif; ?>
+            </div>
+
+        </div>
+
+        <div class="csm-wrap">
+            <div class="csm-slider">
+
+                <?php if( have_rows('csm_item') ): ?>
+                    <?php while ( have_rows('csm_item') ) : the_row(); ?>
+
+                        <div class="csm-item">
+
+                            <?php 
+                            $image = get_sub_field('csm_bucket_img');
+                            if( !empty( $image ) ): ?>
+                                <div class="csm-image">
+                                    <img src="<?php echo esc_url($image['url']); ?>" 
+                                         alt="<?php echo esc_attr($image['alt']); ?>" 
+                                         title="<?php echo esc_attr($image['alt']); ?>" />
+                                </div>
+                            <?php endif; ?>
+
+                            <?php if( get_sub_field('csm_title')): ?>
+                                <h2 class="csm-title"><?php echo esc_html(get_sub_field('csm_title')); ?></h2>
+                            <?php endif; ?>
+
+                            <?php if( get_sub_field('csm_content')): ?>
+                                <div class="csm-content"><?php echo get_sub_field('csm_content'); ?></div>
+                            <?php endif; ?>
+
+                            <?php
+                            $cta_two = get_sub_field('csm_link');
+                            if($cta_two):
+                                $link_url = $cta_two['url'];
+                                $link_title = $cta_two['title'];
+                                $link_target = $cta_two['target'] ? $cta_two['target'] : '_self';
+                            ?>
+                                <a class="btn btn-alt csm-link" 
+                                   href="<?php echo esc_url($link_url); ?>" 
+                                   target="<?php echo esc_attr($link_target); ?>">
+                                    <span><?php echo esc_html($link_title); ?></span>
+                                </a>
+                            <?php endif; ?>
+
+                        </div>
+                    <?php endwhile; ?>
+                <?php endif; ?>
+
+            </div>  
+        </div>
+    </div>
+
+</section>
 
 <?php endif; ?>
 <?php endwhile; echo '</section>'; ?>
