@@ -82,7 +82,7 @@
 				    $link_title = $link['title'];
 				    $link_target = $link['target'] ? $link['target'] : '_self';
 				    ?>
-				    <a class="button btn btn-outline-light btn-lg fwc-cta2" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+				    <a class="button btn btn-alt2 btn-lg fwc-cta2" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
 				<?php endif; ?>
 			 </div>
 		</section>
@@ -4150,7 +4150,7 @@
 						$link_title = $cta_two['title'];
 						$link_target = $cta_two['target'] ? $cta_two['target'] : '_self';
 						?>
-						<a class="btn btn-alt qmm-cta2" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr( $link_target ); ?>"><span><?php echo esc_html($link_title); ?></span></a>
+						<a class="btn btn-alt2 qmm-cta2" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr( $link_target ); ?>"><span><?php echo esc_html($link_title); ?></span></a>
 						<?php endif; ?>	
 					</div>
 	

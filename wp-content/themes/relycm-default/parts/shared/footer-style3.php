@@ -28,6 +28,9 @@
         </div>
             </div>
         <div class="col-lg-2 col-12">
+           <?php if( get_field('sf_company', 'option')): ?>
+                    <h2 class="sf-company"><?php echo esc_html(get_field('sf_company', 'option')); ?></h2>
+                <?php endif; ?>
                 <?php wp_nav_menu(array(
                     'menu'            => 'Footer Left Menu',
                     'container'       => 'ul',
@@ -37,21 +40,16 @@
            
 
             <div class="col-lg-3 col-12">
-                <ul class="sf-contact-info">
+                <div class="sf-contact-info">
+                      <?php if( get_field('sf_newsletter', 'option')): ?>
+                    <h2 class="sf-newsletter"><?php echo esc_html(get_field('sf_newsletter', 'option')); ?></h2>
+                <?php endif; ?>
 
-                    <?php $string = get_field('global_phone_number','option');$string = preg_replace("/[^0-9]/", '', $string);?>
-                    <?php if ($string): ?>
-                        <li class="sf-ph">Tel: <a href="tel:<?php echo $string;?>" aria-label="Phone Number"><?php echo get_field('global_phone_number','option');?></a></li>
-                    <?php endif ?>                 
+                <?php if( get_field('sf_news_content', 'option')): ?>
+                    <div class="sf-news-content"><?php echo esc_html(get_field('sf_news_content', 'option')); ?></div>
+                <?php endif; ?>
 
-                    <?php if (get_field('global_fax','option')): ?>
-                        <li class="sf-fax">Fax: <a href="javascript:void(0)" class="nonlink fax" tabindex="-1" aria-label="Fax Number"><?php echo get_field('global_fax','option');?></a></li>
-                    <?php endif;?>
-
-                    <?php if(get_field('global_email','option')):?>
-                        <li>Em: <a href="mailto:<?php echo get_field('global_email','option');?>" class="sf-mail" aria-label="Email Us"><?php echo get_field('global_email','option');?></a></li>
-                    <?php endif;?>
-                </ul>
+                </div>
             
             </div>
         </div>

@@ -348,12 +348,12 @@ iframe {
 		position: absolute;
 		top: 0;
 		left: 0;
-		background-color: rgba($primary, 0.5);
+		background-color: rgba($secondary, 0.5);
 	}
 
 	.container {
-		padding-top: rem(39);
-		padding-bottom: rem(38);
+		padding-top: rem(122);
+		padding-bottom: rem(122);
 		position: relative;
 		z-index: 1;
 	}
@@ -369,9 +369,9 @@ iframe {
 
 .breadcrumb-menu {
   margin-bottom: 0;
-  color: $off-black;
+  color: $white;
   a {
-    color: $off-black;
+    color: $white;
     font-weight: 500;
     margin-right: em(5);
     text-decoration: none;
@@ -3249,7 +3249,7 @@ iframe {
 	left: 0;
 	right: 0;
 	margin-top: 0;
-	background: $light-gray;
+	background: $secondary;
 	transition: top 0.3s;
 	&.open {
 		display: block;
@@ -3270,24 +3270,24 @@ iframe {
 	border: none;
    	position: relative;
    	line-height: normal;
-   	background-color: $link-color;
+   	background-color: $primary;
    	&:focus,
   	&:hover{
-  		background-color: $link-hover-color;
+  		background-color: $secondary;
   	}
 }
 
 .search-close {
 	/*padding-top: rem(4);*/
   	margin-left: rem(20);
-  	color: $link-color;
+  	color: $primary;
 	font-size: rem(30);
 	i {
 		cursor: pointer;
 	}
 	&:focus,
   	&:hover{
-  		color: $link-hover-color;
+  		color: $secondary;
   	}
 }
 
@@ -3736,8 +3736,10 @@ iframe {
 
 
 /*================= Site Footer 3 ===================*/
+
 .footer-style3 {
 	background-color: $secondary;
+	box-shadow: 3px 0px 6.93px 0.07px rgba($primary, 0.44);
 	.container{
 		padding-top: rem(80);
 		padding-bottom: rem(80);
@@ -3767,14 +3769,48 @@ iframe {
 	.sf-links { 
 		li {
 			margin-bottom: rem(10);
+			position: relative;
+			@include media-breakpoint-down(md) { 
+				display: inline-block!important;
+    			margin-right: 5px;
+			}
+			&:before{
+				content: "";
+				position: absolute;
+				left: 0;
+				width: 10px;
+				height: 1px;
+				color: $white;
+				background-color: $white;
+				top: 50%;
+    transform: translateY(-50%);
+			}
 			a {
 				color: $white;
 				display: inline-block;
 				padding: 0;
+				font-size: rem(18);
+				line-height: rem(24);
+				font-weight: 400;
+				text-decoration: underline;
+				margin-left: rem(15);
+				&:hover, &:focus{
+					color: $primary;
+					text-decoration: none;
+				}
 			}
 		}
 	}
-
+		p{
+			font-size: rem(18);
+			line-height: rem(24);
+			font-weight: 400;
+		}
+		.sf-news-content{
+				font-size: rem(18);
+			line-height: rem(24);
+			font-weight: 400;
+		}
 	.footer-bootom {
 		background-color: $dark-grey;
 		> .container {
@@ -3862,6 +3898,13 @@ iframe {
 	.sf-logo{
 		margin-bottom: rem(24);
 	}
+	h2{
+		font-size: rem(20);
+		line-height: rem(24);
+		border-bottom: 2px solid $primary;
+		display: inline-block;
+		padding-bottom: rem(3);
+	}
 }
 
 .sf-btn-wrap {
@@ -3886,7 +3929,11 @@ iframe {
 	background-color: transparent;
 	color: $blue;
 }
-
+.page-template-front-page{
+	.footer-style3 {
+		box-shadow: none;
+	}
+}
 /*================ Dest Slider ============= */
 .image-gallery-with-content {
   @include media-breakpoint-up(lg) {
@@ -3925,6 +3972,9 @@ iframe {
       }
       img {
         width: 100%;
+		    min-height: em(67);
+    max-height: em(67);
+    object-fit: cover;
   
       }
       &.slick-current{
@@ -4025,6 +4075,11 @@ iframe {
 			}
 			img {
 				width: 100%;
+				width: auto;
+    min-height: rem(350);
+    max-height: rem(350);
+    object-fit: contain;
+    margin: auto;
 			}
 			&.slick-active{
 				a{
@@ -4042,6 +4097,7 @@ iframe {
 	.slick-slide > div > div {
 		display: flex !important;
 		align-items: center;
+		    justify-content: center;
 		> a{
 			display: inline-block;
 		}
@@ -4419,6 +4475,7 @@ aside.widget {
 .cp-color{
   width: rem(90);
   height: rem(90);
+  border: 1px solid $white;
 }
 
 .cp-content{
@@ -4492,7 +4549,7 @@ aside.widget {
       right: 0;
       width: 50%;
       height: 100%;
-      background-color: $link-hover-color;
+      background-color: $primary;
     }
   }
 }
@@ -4508,7 +4565,7 @@ aside.widget {
 }
 
 .on-color-bg{
-  background-color: $link-hover-color;
+  background-color: $primary;
   color: $white;
   position: relative;
   padding-left: 0;
@@ -4517,7 +4574,7 @@ aside.widget {
     content:'';
     width: 100%;
     height: 100%;
-    background-color: $link-hover-color;
+    background-color: $primary;
     position: absolute;
     top: 0;
     left: -100%;
@@ -10197,17 +10254,20 @@ a.top-banner-close {
     }
 	@include media-breakpoint-down(sm) {
 		top: auto;
-		bottom: 0;
+		bottom: -3px;
 	}
   }
   .slick-next {
-    right: 30%;
+    right: 41%;
+	@media screen and (min-width:600px){
+		right:44%;
+	}
 	@include media-breakpoint-up(md) {
 		right:-10px;
 	}
   }
   .slick-prev {
-    left: 30%;
+    left:  41%;
     @include transform(scale(-1));
 	@include media-breakpoint-up(md) {
 		left:-10px;
@@ -10235,6 +10295,10 @@ a.top-banner-close {
 	.vcm-item1{
 		@include media-breakpoint-up(md) {
 			max-width: 56.45%;
+		}
+		@include media-breakpoint-down(md) {
+			    margin: auto;
+    margin-bottom: 30px;
 		}
 	}
 }
@@ -10405,12 +10469,19 @@ a.top-banner-close {
 			    margin-top: rem(-200);
     position: relative;
 		}
-		@include media-breakpoint-down(md) {
-			margin-bottom: rem(30);
-		}
+
 		img{
 			min-height: rem(525);
 			object-fit: cover;
+		}
+				@include media-breakpoint-down(md) {
+					margin: auto;
+			margin-bottom: rem(30);
+			
+			img{
+				min-height: auto;
+				max-width: rem(500);
+			}
 		}
 	}
 	.qmm-content{
@@ -10642,7 +10713,7 @@ width: 54%;
 				position: absolute;
 				content: '';
 				background-image: url(/wp-content/uploads/black-arrow.png);
-				height: 54px;
+				height: 100%;
 				background-repeat: no-repeat;
 				background-color: $white;
 				right:0;
@@ -10663,7 +10734,7 @@ width: 54%;
     position: absolute;
 	background-color: $primary;
     z-index: 1;
-	bottom: -70px;
+	bottom: -90px;
     color: transparent;
     &:focus,
     &:hover {
@@ -10714,5 +10785,25 @@ width: 54%;
 	}
 	@include media-breakpoint-down(md) {
 		justify-content: center;
+		margin-bottom: rem(30);
+	}
+}
+.tl-btn{
+	border-color: $primary;
+	&:before{
+		background-color: $primary;
+	}
+	&:hover, &:focus{
+		border-color: $white;
+	&:before{
+		background-color: $white;
+	}
+	}
+}
+.fwc-cta2{
+	&:hover, &:focus{
+		border-color: $white;
+		background-color: $white;
+		color:$secondary;
 	}
 }

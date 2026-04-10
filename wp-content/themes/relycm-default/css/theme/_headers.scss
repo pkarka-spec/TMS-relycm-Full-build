@@ -20,7 +20,7 @@
 	  top: 0;
 	  left: 0;
 	  background-color: $white;
-	  box-shadow: 0px 3px 6.93px 0.07px rgba(40, 40, 40, 0.44);
+	  box-shadow: 0px 3px 6.93px 0.07px rgba($primary, 0.44);
 	  transition: none;
   }
 }
@@ -451,11 +451,10 @@
 		color: $primary;
 		border: none;
 		&:hover {
-			color: $blue;
+			color: $primary;
 		}
 	}
 	.search-form-tigger {
-		color: $white;
 		@include media-breakpoint-up(lg) {
 			color: $white;
 			&:hover,

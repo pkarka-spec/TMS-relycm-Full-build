@@ -67,7 +67,7 @@ ul:not([class]) {
       padding-left: rem(22);
       li, li:not([class]) {
         padding-left: rem(30);
-        color: $medium-gray;
+        color: $white;
         font-weight: 400;
         margin-bottom: rem(12);
         &:after {
@@ -96,7 +96,7 @@ ol {
   > li {
     position: relative;
     counter-increment: custom-counter;
-    color: $dark-grey;
+    color: $white;
     margin-bottom: rem(12);
     padding-left: em(15);
     font-weight: 400;
@@ -117,7 +117,7 @@ ol {
         position: relative;
         counter-increment: custom-counter;
         font-weight: 400;
-        color: $medium-gray;
+        color: $white;
         padding-left: em(12);
 
         &:before {
@@ -137,7 +137,7 @@ ol {
       li, li:not([class]) {
         font-size: 1em;
         padding-left: em(14);
-        color: $medium-gray;
+        color: $white;
         &:after {
           content: '';
           width: 4px;
@@ -146,7 +146,7 @@ ol {
           position: absolute;
           top: em(10);
           left: 0;
-          background: $medium-gray;
+          background: $primary;
           border-radius: 50%;
         }
       }

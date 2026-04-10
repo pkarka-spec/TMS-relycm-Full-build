@@ -1,6 +1,6 @@
 <header class="site-header header5">
 	<?php get_template_part( 'parts/covid-banner' ); ?>	
-	<div class="top-line d-none d-lg-block">
+	<div class="top-line d-none d-lg-block sh-sticky-wrap">
 		<div class="container">
 			<div class="row">
 
@@ -28,7 +28,7 @@
 					    $link_title = $link['title'];
 					    $link_target = $link['target'] ? $link['target'] : '_self';
 					    ?>
-					    <a class="btn btn-alt2 d-none d-lg-inline-block m-0" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+					    <a class="btn btn-alt2 tl-btn d-none d-lg-inline-block m-0" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
 					<?php endif; ?>
 
 				</div>
@@ -36,7 +36,7 @@
 		</div>
 	</div>
 	
-	<div class="header-inner sh-sticky-wrap">
+	<div class="header-inner">
 
 		<nav class="navbar navbar-expand-lg navbar-light">
 			<div class="container">

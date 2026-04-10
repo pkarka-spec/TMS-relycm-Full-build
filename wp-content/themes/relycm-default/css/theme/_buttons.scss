@@ -41,7 +41,7 @@
 
 .btn-alt2 {
   display: inline-block;
-  border-color: $primary;
+  border-color: $white;
   background-color: transparent;
   color: $white;
   position: relative;
@@ -51,18 +51,18 @@
     position: absolute;
     background-image: url(/wp-content/uploads/btn-arrow.png);
     width: 54px;
-    height: 54px;
+    height: 100%;
     right: 0;
-    background-color: $primary;
+    background-color: $white;
     top: 0;
   }
   &:focus,
   &:hover {
-    border-color: $white;
+    border-color: $primary;
     background-color: transparent;
     color: $white;
     &:before{
-      background-color: $white;
+      background-color: $primary;
     }
   }
 }
