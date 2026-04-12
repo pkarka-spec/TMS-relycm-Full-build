@@ -793,13 +793,13 @@ sup {
 }
 
 a {
-  color: #10b1d7;
+  color: #EC5826;
   text-decoration: none;
   background-color: transparent;
 }
 a:hover {
-  color: #0072bb;
-  text-decoration: none;
+  color: #EC5826;
+  text-decoration: underline;
 }
 
 a:not([href]):not([class]) {
@@ -3802,15 +3802,15 @@ fieldset:disabled a.product-grid-item-link {
 
 .btn-link {
   font-weight: 400;
-  color: #10b1d7;
+  color: #EC5826;
   text-decoration: none;
 }
 .btn-link:hover {
-  color: #0072bb;
-  text-decoration: none;
+  color: #EC5826;
+  text-decoration: underline;
 }
 .btn-link:focus, .btn-link.focus {
-  text-decoration: none;
+  text-decoration: underline;
 }
 .btn-link:disabled, .btn-link.disabled {
   color: #6c757d;
@@ -5730,13 +5730,13 @@ input[type=button].btn-block {
   padding: 0.5rem 0.75rem;
   margin-left: -1px;
   line-height: 1.25;
-  color: #10b1d7;
+  color: #EC5826;
   background-color: #fff;
   border: 1px solid #dee2e6;
 }
 .page-link:hover {
   z-index: 2;
-  color: #0072bb;
+  color: #EC5826;
   text-decoration: none;
   background-color: #e9ecef;
   border-color: #dee2e6;
@@ -17575,11 +17575,11 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1rem;
 }
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-  color: #10b1d7;
+  color: #EC5826;
   text-decoration: underline;
 }
 h1 a:hover, h1 a:focus, h2 a:hover, h2 a:focus, h3 a:hover, h3 a:focus, h4 a:hover, h4 a:focus, h5 a:hover, h5 a:focus, h6 a:hover, h6 a:focus {
-  color: #0072bb;
+  color: #EC5826;
   text-decoration: none;
 }
 
@@ -17639,11 +17639,11 @@ p {
   line-height: 1.5rem;
 }
 p a {
-  color: #10b1d7;
+  color: #EC5826;
   text-decoration: underline;
 }
 p a:hover, p a:focus {
-  color: #0072bb;
+  color: #EC5826;
   text-decoration: none;
 }
 
@@ -17671,7 +17671,7 @@ a:focus:not(:active):not(:hover) {
 }
 
 a:focus {
-  color: #0072bb;
+  color: #EC5826;
 }
 
 /*=================Gravity form================*/
@@ -23418,7 +23418,7 @@ iframe {
 }
 .bhcg-item:focus:before, .bhcg-item:hover:before {
   opacity: 1;
-  background: rgba(40, 98, 143, 0.9);
+  background: rgba(236, 88, 38, 0.9);
 }
 .bhcg-item:focus .bhcg-item-img, .bhcg-item:hover .bhcg-item-img {
   -webkit-transform: translate(-50%, -50%) scale3d(1.05, 1.05, 1.05);
@@ -24388,7 +24388,7 @@ iframe {
 .fwc-cta:hover, .fwc-cta:focus {
   background-color: #fff;
   border-color: #fff;
-  color: #0072bb;
+  color: #EC5826;
 }
 
 /*================ Full width CTA(Column Style) =======================*/
@@ -24740,10 +24740,10 @@ iframe {
   padding-bottom: 4.6875rem;
 }
 .blog-module2 a {
-  color: #10b1d7;
+  color: #EC5826;
 }
 .blog-module2 a:focus, .blog-module2 a:hover {
-  color: #0072bb;
+  color: #EC5826;
 }
 .blog-module2 .blog-heading {
   margin-bottom: 1.875rem;
@@ -26370,15 +26370,16 @@ aside.widget {
   }
 }
 .accordion-tabs .tab-link {
-  background-color: #10b1d7;
+  background-color: #322F31;
   /*border: $tab-border;*/
   border-radius: 0;
   color: white;
   display: block;
   font-weight: normal;
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   line-height: 1.875rem;
   padding: 0.625rem 1.339375rem;
+  text-transform: uppercase;
   text-decoration: none;
   font-family: "Roboto", sans-serif;
   font-weight: 500;
@@ -26393,7 +26394,7 @@ aside.widget {
   }
 }
 .accordion-tabs .tab-link:hover, .accordion-tabs .tab-link:focus, .accordion-tabs .tab-link.is-active {
-  background-color: #0072bb;
+  background-color: #EC5826;
   color: white;
 }
 @media (min-width: 992px) {
@@ -26405,7 +26406,7 @@ aside.widget {
 }
 .accordion-tabs .tab-content {
   border-top: none;
-  background: #DCDCDC;
+  background: #1A1A1A;
   display: none;
   padding: 1.5625rem 1.875rem;
   width: 100%;
@@ -26413,7 +26414,6 @@ aside.widget {
 }
 @media (min-width: 992px) {
   .accordion-tabs .tab-content {
-    border-top: 1px solid #322F31;
     float: left;
   }
 }
@@ -26803,7 +26803,7 @@ aside.widget {
   content: "";
   width: 100%;
   height: 100%;
-  background-color: #0072bb;
+  background-color: #EC5826;
   position: absolute;
   top: 0;
   right: -100%;
@@ -28496,8 +28496,8 @@ aside.widget {
   text-align: center;
 }
 .product-item:focus .product-header, .product-item:hover .product-header {
-  color: #0072bb;
-  text-decoration: none;
+  color: #EC5826;
+  text-decoration: underline;
 }
 
 /*Other*/
@@ -29725,7 +29725,6 @@ aside.widget {
   display: block;
   max-width: 100%;
   /*margin: 0 0 30px;*/
-  padding-bottom: 4.375rem;
   text-align: center;
 }
 @media (min-width: 576px) {
@@ -31251,11 +31250,11 @@ body .jo-form .gform_wrapper .gform_footer {
   font-size: 1rem;
 }
 .blog .post-meta a {
-  color: #10b1d7;
+  color: #EC5826;
   text-decoration: underline;
 }
 .blog .post-meta a:hover, .blog .post-meta a:focus {
-  color: #0072bb;
+  color: #EC5826;
   text-decoration: none;
 }
 
@@ -31294,15 +31293,15 @@ body .jo-form .gform_wrapper .gform_footer {
 .post-categories {
   font-size: 1.25rem;
   text-transform: uppercase;
-  color: #10b1d7;
+  color: #EC5826;
   margin-bottom: 2.1875rem;
 }
 .post-categories a {
-  color: #10b1d7;
+  color: #EC5826;
   text-decoration: underline;
 }
 .post-categories a:hover, .post-categories a:focus {
-  color: #0072bb;
+  color: #EC5826;
   text-decoration: none;
 }
 
@@ -31363,7 +31362,7 @@ body .jo-form .gform_wrapper .gform_footer {
   text-decoration: underline;
 }
 .post-navigation .nav-previous a:hover {
-  color: #0072bb;
+  color: #EC5826;
   text-decoration: none;
 }
 .post-navigation .nav-previous span {
@@ -31393,7 +31392,7 @@ body .jo-form .gform_wrapper .gform_footer {
   text-decoration: underline;
 }
 .post-navigation .nav-next a:hover {
-  color: #0072bb;
+  color: #EC5826;
   text-decoration: none;
 }
 .post-navigation .nav-next span {
@@ -33252,5 +33251,27 @@ a.top-banner-close {
   border-color: #fff;
   background-color: #fff;
   color: #1A1A1A;
+}
+
+.industry-grid .pmi-img {
+  max-width: 7.5rem;
+}
+.industry-grid .product-header {
+  color: #fff;
+}
+
+.icon-grid .bm-items {
+  text-align: center;
+}
+.icon-grid .bmi-image img {
+  max-width: 7.5rem;
+}
+
+.service-block .bhcg-item:hover .bhcg-item-title, .service-block .bhcg-item:focus .bhcg-item-title {
+  display: none;
+}
+
+.pdfemb-viewer .pdfemb-pagescontainer .pdfemb-inner-div canvas, .pdfemb-viewer, .pdfemb-viewer .pdfemb-pagescontainer .pdfemb-inner-div, .pdfemb-viewer .pdfemb-pagescontainer.grab-to-pan-grab {
+  width: 100% !important;
 }
 /*# sourceMappingURL=theme.css.map */

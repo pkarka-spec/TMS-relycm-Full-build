@@ -353,30 +353,30 @@ add_filter( 'acf/the_field/escape_html_optin', '__return_true' );
 
 
 // CPT (Delete it if not needed)
-function create_custom_posttype() {
-    register_post_type( 'demo-cpts',
-    // CPT Options
-        array(
-            'labels' => array(
-            'name' => __( 'Demo CPT' ),
-            'singular_name' => __( 'Demo CPT' )
-            ),
-            'public' => true,
-            'publicly_queryable' => true,
-            'has_archive' => true,
-            'show_ui' => true,
-            'query_var' => false,
-            'rewrite' => array('slug' => 'demo-cpt', 'with_front'  => false),
-            'capability_type' => 'post',
-            'hierarchical' => false,               
-            'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', ),
-        )
-    );
+// function create_custom_posttype() {
+//     register_post_type( 'demo-cpts',
+//     // CPT Options
+//         array(
+//             'labels' => array(
+//             'name' => __( 'Demo CPT' ),
+//             'singular_name' => __( 'Demo CPT' )
+//             ),
+//             'public' => true,
+//             'publicly_queryable' => true,
+//             'has_archive' => true,
+//             'show_ui' => true,
+//             'query_var' => false,
+//             'rewrite' => array('slug' => 'demo-cpt', 'with_front'  => false),
+//             'capability_type' => 'post',
+//             'hierarchical' => false,               
+//             'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', ),
+//         )
+//     );
     
-    flush_rewrite_rules( true );
+//     flush_rewrite_rules( true );
     
-}
-add_action( 'init', 'create_custom_posttype' );
+// }
+// add_action( 'init', 'create_custom_posttype' );
 
 
 // Check file types and extensions

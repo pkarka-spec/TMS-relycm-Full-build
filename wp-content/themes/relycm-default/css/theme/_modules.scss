@@ -1214,7 +1214,7 @@ iframe {
 	&:hover {
 		&:before {
 			opacity: 1;
-			background: rgba(40, 98, 143, 0.9);
+			background: rgba($primary, 0.9);
 		}
 		.bhcg-item-img {
 			transform: translate(-50%, -50%) scale3d(1.05,1.05,1.05);
@@ -4238,15 +4238,16 @@ aside.widget {
     }
   }
   .tab-link {
-    background-color: $link-color;
+    background-color: $dark-grey;
     /*border: $tab-border;*/
     border-radius: 0;
     color: white;
     display: block;
     font-weight: normal;
-    font-size: rem(18);
+    font-size: rem(20);
     line-height: rem(30);
     padding: rem(10) rem(21.43);
+		text-transform: uppercase;
     text-decoration: none;
     font-family: $headings-font-family;
     font-weight: 500;
@@ -4274,13 +4275,13 @@ aside.widget {
   }
   .tab-content {
     border-top: none;
-    background: $light-gray;
+    background: $secondary;
     display: none;
     padding: rem(25) rem(30);
     width: 100%;
     position: relative;
     @include media-breakpoint-up(lg) {
-    	border-top: 1px solid $dark-grey;
+    	// border-top: 1px solid $dark-grey;
       	float: left;
     }
   }
@@ -7448,7 +7449,7 @@ background: linear-gradient(to right, rgba(40,98,143,1) 0%,rgba(0,51,77,1) 100%)
     display: block;
     max-width: 100%;
     /*margin: 0 0 30px;*/
-    padding-bottom:  rem(70);
+    // padding-bottom:  rem(70);
     text-align: center;
     @include media-breakpoint-up(sm) {
    		text-align: left;
@@ -10806,4 +10807,34 @@ width: 54%;
 		background-color: $white;
 		color:$secondary;
 	}
+}
+.industry-grid{
+	.pmi-img{
+		max-width: rem(120);
+	}
+	.product-header{
+		color: $white;
+	}
+}
+.icon-grid{
+	.bm-items{
+		text-align: center;
+	}
+	.bmi-image{
+		img{
+			max-width: rem(120);
+		}
+	}
+}
+.service-block{
+	.bhcg-item{
+		&:hover,  &:focus{
+		.bhcg-item-title{
+			display:none;
+		}
+		}
+	}
+}
+.pdfemb-viewer .pdfemb-pagescontainer .pdfemb-inner-div canvas, .pdfemb-viewer, .pdfemb-viewer .pdfemb-pagescontainer .pdfemb-inner-div, .pdfemb-viewer .pdfemb-pagescontainer.grab-to-pan-grab{
+width:100%!important;
 }

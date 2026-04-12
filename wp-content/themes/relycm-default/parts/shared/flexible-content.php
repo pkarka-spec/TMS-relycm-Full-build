@@ -3316,7 +3316,7 @@
 
 	<?php elseif( get_row_layout() == 'destination_bucket_page_bucket_module' ): ?>
 		<section class="dbm-bucket-module" >
-			<div class="container pt-3 pb-5">
+			<div class="container <?php echo get_sub_field('class'); ?>">
 				<div class="bm-wrap">
 					<div class="bm-title-wrap">
 						<?php if (get_sub_field('bm_heading')): ?>
