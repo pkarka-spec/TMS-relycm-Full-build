@@ -5,7 +5,7 @@
         <div class="col-lg-7 col-12">
         <?php $logo = get_field('global_footer_logo','option');
         if( !empty($logo) ): ?>
-            <a href="<?php bloginfo('url'); ?>" class="sf-logo">
+            <a href="<?php echo bloginfo('url') . '/home'; ?>" class="sf-logo">
                 <img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>" title="<?php echo $logo['alt']; ?>">
             </a>
         <?php endif;?>

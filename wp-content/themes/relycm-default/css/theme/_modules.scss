@@ -4157,8 +4157,9 @@ iframe {
 	    font-size: rem(18);
 	    font-weight: 500;
 	    padding-right: rem(40);
-	    padding-top: rem(15);
-	    padding-bottom: rem(15);
+	    padding-top: rem(8);
+	    padding-bottom: rem(8);
+		padding-left: rem(16);
 
 	    i {
 	    	font-weight: 400;
@@ -4184,6 +4185,7 @@ iframe {
 		}
 	}
 	.card-body{
+		padding: rem(20) rem(16);
 		p{
 			color:$black;
 		}
@@ -10837,4 +10839,105 @@ width: 54%;
 }
 .pdfemb-viewer .pdfemb-pagescontainer .pdfemb-inner-div canvas, .pdfemb-viewer, .pdfemb-viewer .pdfemb-pagescontainer .pdfemb-inner-div, .pdfemb-viewer .pdfemb-pagescontainer.grab-to-pan-grab{
 width:100%!important;
+}
+.tnp-field label{
+	display: none !important;
+}
+div.tnp-subscription, form.tnp-subscription, form.tnp-profile{
+	margin: 0!important;
+}
+.tnp-subscription form{
+	    position: relative;
+}
+.tnp-subscription input.tnp-submit{
+	font-size: 0!important;
+    background-image: url(https://relycm1.wpengine.com/wp-content/uploads/arrow-pnp.png)!important;
+    width: 34px!important;
+    height: 34px!important;
+    background-repeat: no-repeat;
+    background-position: center center;
+	background-color: transparent!important;
+}
+.tnp-subscription .tnp-field-button{
+	    margin-bottom: 0!important;
+		text-align: left;
+    position: absolute;
+    top: 45%;
+    transform: translateY(-45%);
+    right: 40px;
+    bottom: 0;
+}
+.tnp-subscription .tnp-field-email{
+height: 50px!important;
+}
+.sf-news-form{
+	margin-top: rem(24);
+}
+.page-id-3137{
+	.site-header {
+		display: none;
+	}
+	.wrapper{
+		padding-top: 0;
+	}
+	.front-page-col-module{
+		max-width: 100%;
+    padding-top: 0 !important;
+	    text-align: center;
+		a{
+			    overflow: hidden;
+    display: block;
+		}
+	}
+	.sf-top-wrap{
+		text-align: center;
+		.col-lg-2{
+			display: none;
+		}
+		.col-lg-3{
+			display: none;
+		}
+		.col-lg-7{
+			max-width: 100%;
+			        flex: 0 0 100%;
+		}
+		.sf-address{
+			width:100%;
+		}
+		.sf-logo-wrap{
+			justify-content: center;
+		}
+	}
+	.page-intro{
+		display: none;
+	}
+	#breadcrumbs{
+		display: none;
+	}
+	.site-intro{
+		display: none;
+	}
+	.fp-fullfillment, .fp-contract{
+		    transition: transform 0.3s ease-in-out;
+			&:hover, &:focus{
+				transition: all 0.3s ease;
+				transform: scale(1.5);
+			}
+	}
+	.col-md-6{
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.footer-style3 .container{
+		padding-bottom: rem(35);
+	}
+	.multiple-cols-module{
+		position: relative;
+	}
+	.mcm-content{
+    position: absolute;
+    top: 37%;
+    left: 50%;
+    transform: translateX(-37%);
+	}
 }

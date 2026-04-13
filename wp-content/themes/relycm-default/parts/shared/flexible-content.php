@@ -162,6 +162,9 @@
 					<?php endwhile; ?>
 					<?php endif; ?>				
 				</section>
+				<?php if( get_sub_field('mcm_content')): ?>
+						<div class="mcm-content"><?php echo get_sub_field('mcm_content'); ?></div>
+					<?php endif; ?>
 				<?php if( get_sub_field('divider')): ?>	
 					<hr>
 				<?php endif; ?>

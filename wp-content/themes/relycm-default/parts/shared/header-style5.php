@@ -61,7 +61,7 @@
 					<div class="sh-logo-wrap">
 					<?php
 	                if( !empty($logo) ): ?>
-	                    <a href="<?php bloginfo('url'); ?>" class="site-logo"><img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>" title="<?php echo $logo['alt']; ?>"></a>
+	                    <a href="<?php echo bloginfo('url') . '/home'; ?>" class="site-logo"><img src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>" title="<?php echo $logo['alt']; ?>"></a>
 	                <?php else: 
 	                	the_custom_logo();
 	                 endif;?>

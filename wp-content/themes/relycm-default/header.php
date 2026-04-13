@@ -89,12 +89,12 @@ $container = get_theme_mod( 'understrap_container_type' );
 		<?php get_template_part( 'parts/shared/header-style7' ); ?>			
 	<?php endif ?>
 
-	<?php if ( is_front_page() ) : ?>
-      <!--Site intro container start-->
-        <?php get_template_part( 'parts/site-intro' ); ?>   
-      <!--Site intro container end-->
-    <?php else : ?>
-      <!--page intro start-->    
-        <?php get_template_part( 'parts/page-intro' ); ?>    
-      <!--page intro end-->
-    <?php endif; ?>
+<?php if ( is_front_page() || is_page_template('front-page.php') ) : ?>
+    <!--Site intro container start-->
+    <?php get_template_part( 'parts/site-intro' ); ?>   
+    <!--Site intro container end-->
+<?php else : ?>
+    <!--page intro start-->    
+    <?php get_template_part( 'parts/page-intro' ); ?>    
+    <!--page intro end-->
+<?php endif; ?>
