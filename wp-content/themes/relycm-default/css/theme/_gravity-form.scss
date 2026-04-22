@@ -2866,7 +2866,7 @@ body {
 }
 
 .ginput_container_checkbox .gfield_checkbox .gfield-choice-input{
-  vertical-align: top!important;
+  vertical-align: middle!important;
 }
 
 
@@ -2920,4 +2920,7 @@ body {
   font-family: $font-family-base;
   font-size: rem(16) !important;
   line-height: normal !important;
+}
+.gform_wrapper.gravity-theme .gfield_checkbox label, .gform_wrapper.gravity-theme .gfield_radio label{
+  font-size: rem(20)!important;
 }

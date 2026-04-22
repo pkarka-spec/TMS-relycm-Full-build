@@ -86,7 +86,7 @@
 			            <span class="sh-email m-0"><a class="cms_email" href="mailto:<?php echo strtolower($email_address); ?>" title="Email Us" aria-label="Email Us"><i class="fa fa-envelope-o" aria-hidden="true"></i> <span><?php echo $email_address; ?></span></a></span>
 			        <?php endif ?>
 
-					<span class="sh-search mx-0"><a href="#search" class="search-form-tigger"  data-toggle="search-form"><i class="fa fa-search" aria-hidden="true" aria-label="Search"></i></a></span>
+					<span class="sh-search mx-0"><a href="#search" class="search-form-tigger"  data-toggle="search-form" aria-label="Search" ><i class="fa fa-search" aria-hidden="true" aria-label="Search"></i></a></span>
 					<?php 
 					$link = get_field('request_quote_link', 'option');
 					if( $link ): 

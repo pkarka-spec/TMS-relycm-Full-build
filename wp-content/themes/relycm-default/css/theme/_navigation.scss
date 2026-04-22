@@ -29,6 +29,10 @@
 	@include media-breakpoint-up(lg) {
 		padding: rem(5) 0 0;
 	}
+	@include media-breakpoint-down(md) {
+padding: 15px 0;
+background-color: $light-gray;
+	}
 }
 
 .dropdown .dropdown-menu .dropdown-menu { 
@@ -101,7 +105,7 @@
 	}
 }
 
-.menu-item-has-children:hover {
+.menu-item-has-children:hover , .menu-item-has-children:focus {
 	@include media-breakpoint-up(lg) {
 		> .dropdown-menu {
 		  display: block !important;
@@ -271,6 +275,9 @@
 		&:hover,
 		&:focus {
 			color: $nav-hover-color;
+		}
+		&:focus {
+			text-decoration: underline;
 		}
 	}
 

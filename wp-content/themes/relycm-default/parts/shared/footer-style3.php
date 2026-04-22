@@ -2,7 +2,7 @@
 <footer class="site-footer footer-style3" role="contentinfo">
     <div class="container">
         <div class="row sf-top-wrap">
-        <div class="col-lg-7 col-12">
+        <div class="col-lg-6 col-12 sftw-col1">
         <?php $logo = get_field('global_footer_logo','option');
         if( !empty($logo) ): ?>
             <a href="<?php echo bloginfo('url') . '/home'; ?>" class="sf-logo">
@@ -18,16 +18,23 @@
                <?php echo get_field('thomas_badge' , 'option'); ?>
              
             </div>   <?php endif; ?>
-           
+           <?php
+						$cta_two = get_field('sf_iso_link', 'option');
+						if($cta_two):
+						$link_url = $cta_two['url'];
+						$link_title = $cta_two['title'];
+						$link_target = $cta_two['target'] ? $cta_two['target'] : '_self';
+						?>
+						<a class="sf-iso-link" aria-label="ISO" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr( $link_target ); ?>">
                 <?php 
                 $image = get_field('sf_iso_logo', 'option');
                 if( !empty( $image ) ): ?>
-                   <div class="sf-iso-img">  <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" /></div>
+                   <div class="sf-iso-img"><img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" title="<?php echo esc_attr($image['alt']); ?>" /></a></div>
                 <?php endif; ?>
-            
+            </a> <?php endif; ?>
         </div>
             </div>
-        <div class="col-lg-2 col-12">
+        <div class="col-lg-3 col-12 sftw-col2">
            <?php if( get_field('sf_company', 'option')): ?>
                     <h2 class="sf-company"><?php echo esc_html(get_field('sf_company', 'option')); ?></h2>
                 <?php endif; ?>
@@ -39,7 +46,7 @@
             </div>
            
 
-            <div class="col-lg-3 col-12">
+            <div class="col-lg-3 col-12 sftw-col3">
                 <div class="sf-contact-info">
                       <?php if( get_field('sf_newsletter', 'option')): ?>
                     <h2 class="sf-newsletter"><?php echo esc_html(get_field('sf_newsletter', 'option')); ?></h2>
@@ -48,7 +55,9 @@
                 <?php if( get_field('sf_news_content', 'option')): ?>
                     <div class="sf-news-content"><?php echo esc_html(get_field('sf_news_content', 'option')); ?></div>
                 <?php endif; ?>
-
+  <?php if( get_field('sf_news_form', 'option')): ?>
+                    <div class="sf-news-form"><?php echo do_shortcode(get_field('sf_news_form' , 'option')); ?></div>
+                <?php endif; ?>
                 </div>
             
             </div>

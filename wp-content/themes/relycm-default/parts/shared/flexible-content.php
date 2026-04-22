@@ -1992,7 +1992,7 @@
 		            	<?php if (have_rows('iwsm_tabs_items')): ?>
 		                <div class="nav row nav-pills nav-pills-custom" id="v-pills-<?php echo get_row_index() ?>-tab" role="tablist" aria-orientation="vertical">
 		            		<?php while (have_rows('iwsm_tabs_items')): the_row(); ?>
-			                    <a class="col-12 nav-link p-2  <?php if (get_row_index()==1): ?>active<?php endif ?>" id="v-pills-<?php echo get_row_index(); ?>-tab" data-toggle="pill" href="#v-pills-<?php echo get_row_index(); ?>" role="tab" aria-controls="v-pills-<?php echo get_row_index(); ?>" aria-selected="<?php if (get_row_index()==1): ?>true<?php else: ?>false<?php endif ?>">
+			                    <a class="col-12 nav-link <?php if (get_row_index()==1): ?>active<?php endif ?>" id="v-pills-<?php echo get_row_index(); ?>-tab" data-toggle="pill" href="#v-pills-<?php echo get_row_index(); ?>" role="tab" aria-controls="v-pills-<?php echo get_row_index(); ?>">
 									<div class="iwsm-wrap">
 			                    	<?php
 			                    	$image = get_sub_field('title_thumbnail_image');
@@ -2024,7 +2024,7 @@
 
 			                    <div class="tab-pane fade <?php if (get_row_index()==1): ?>show active<?php endif ?>" id="v-pills-<?php echo get_row_index(); ?>" role="tab" aria-labelledby="v-pills-<?php echo get_row_index(); ?>-tab" role="tab">
 			                    	<div class="d-md-none" id="heading-<?php echo get_row_index() ?>">
-					                	<a class="col-12 nav-link mb-3 p-2" data-toggle="collapse" href="#collapse-<?php echo get_row_index() ?>" aria-selected="<?php if (get_row_index()==1): ?>true<?php else: ?>false<?php endif ?>" aria-expanded="<?php if (get_row_index()==1): ?>true<?php else: ?>false<?php endif ?>" aria-controls="collapse-<?php echo get_row_index() ?>">
+					                	<a class="col-12 nav-link mb-3 p-2" data-toggle="collapse" href="#collapse-<?php echo get_row_index() ?>"  aria-expanded="<?php if (get_row_index()==1): ?>true<?php else: ?>false<?php endif ?>" aria-controls="collapse-<?php echo get_row_index() ?>">
 					                    	<?php
 			                    	$image = get_sub_field('title_thumbnail_image');
 			                    	if ($image): ?>
@@ -3333,7 +3333,7 @@
 				<div class="row pt-3">
 				<?php if (have_rows('bm_items')): while ( have_rows('bm_items') ) : the_row(); ?>
 					
-					<div class="col-sm-6 col-md-4">
+					<div class="col-sm-6 col-md-6 col-lg-4">
 						<div class="bm-items">
 						<?php if(get_sub_field('bmi_image')) : ?><?php $bmi_image = get_sub_field('bmi_image'); ?>	
 						<div class="bmi-image">
@@ -4032,7 +4032,7 @@
 				<div class="ism-icon"> <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" title="<?php echo esc_attr($image['alt']); ?>" /></div>
 				<?php endif; ?>
 				<?php if( get_sub_field('title')): ?>
-          <h3 class="ism-title"><?php echo get_sub_field('title'); ?></h3>
+          <h2 class="ism-title"><?php echo get_sub_field('title'); ?></h2>
           <?php endif; ?>	
 			</div>
 			<?php endwhile; endif; ?>   
@@ -4144,7 +4144,7 @@
 						$link_title = $cta_two['title'];
 						$link_target = $cta_two['target'] ? $cta_two['target'] : '_self';
 						?>
-						<a class="btn btn-alt qmm-cta1" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr( $link_target ); ?>"><span><?php echo esc_html($link_title); ?></span></a>
+						<a class="btn btn-primary qmm-cta1" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr( $link_target ); ?>"><span><?php echo esc_html($link_title); ?></span></a>
 						<?php endif; ?>	
 										   <?php
 						$cta_two = get_sub_field('qmm_cta2');

@@ -32,6 +32,8 @@
         <?php if(get_field('si_video_link')):?>
           <video autoplay="" loop="" muted="" playsinline="" width="100%">
             <source src="<?php echo get_field('si_video_link');?>" type="video/mp4">
+            <track src="" kind="captions" srclang="en" label="english_captions">
+    <track src="" kind="captions" srclang="es" label="spanish_captions">
           </video>
         <?php endif;?>
       </div>

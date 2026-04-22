@@ -1404,6 +1404,8 @@ $('.rpm-items-wrap').slick({
         slidesToScroll: 1,
         infinite: true,
         arrows: true,
+        autoplay: true,
+    autoplaySpeed: 4000,
         responsive: [
           {
           breakpoint: 1200,
@@ -1422,8 +1424,8 @@ $('.rpm-items-wrap').slick({
           {
           breakpoint: 768,
           settings: {
-            slidesToShow: 2,
-            slidesToScroll: 2
+            slidesToShow: 1,
+            slidesToScroll: 1
           }
         },
         {
@@ -1556,6 +1558,8 @@ $('.rpm-items-wrap').slick({
     slidesToShow: 5,
     slidesToScroll: 1,
     infinite: true,
+    autoplay: true,
+    autoplaySpeed: 4000,
     responsive: [
     {
       breakpoint: 1200,
@@ -1605,6 +1609,13 @@ $(document).ready(function (){
       breakpoint: 769,
       settings: {
         slidesToShow: 2,
+        slidesToScroll: 1
+      }
+    },
+        {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 1,
         slidesToScroll: 1
       }
     },
